@@ -23,7 +23,7 @@ int main()
 
   // do
   // {
-  //   cout << "Ingrese un valor menor o igual a 5: ";
+  //    cout << "Ingrese un valor menor o igual a 5: ";
   //   cin >> m;
   //   cout << "Ingrese un valor menor o igual a 3: ";
   //   cin >> n;
