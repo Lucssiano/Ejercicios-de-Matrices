@@ -15,8 +15,34 @@ d) Total general */
 
 using namespace std;
 
+const int modelos = 7, colores = 5;
+
+void inicializarMatriz(int mt[][modelos], int m, int n);
+void ingresoDeDatos(int mt[][modelos], int m, int n);
+
 int main()
 {
-  const int modelos = 7, colores = 5;
+  int mCalzados[colores][modelos];
+
+  inicializarMatriz(mCalzados, colores, modelos);
+  ingresoDeDatos(mCalzados, colores, modelos);
+
   return 0;
 }
+
+void inicializarMatriz(int mt[][modelos], int m, int n)
+{
+  for (int f = 0; f < m; f++)
+    for (int c = 0; c < n; c++)
+      mt[f][c] = 0;
+}
+
+// void ingresoDeDatos(int mt[][modelos], int m, int n)
+// {
+//   // for (int f = 0; f < m; f++)
+//   //   for (int c = 0; c < n; c++)
+//   //   {
+//   //     cout << "Ingrese la cantidad de calzados vendidos del color " << f + 1 << " y modelo " << c + 1 << endl;
+//   //     cin >> mt[f][c];
+//   //   }
+// }

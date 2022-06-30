@@ -47,10 +47,8 @@ void cargarPorColumna(int matriz[][cantC], int m, int n)
   for (int c = 0; c < n; c++)
     for (int f = 0; f < m; f++)
     {
-      int num;
       cout << "Fila " << f << " columna " << c << endl;
-      cin >> num;
-      matriz[f][c] = num;
+      cin >> matriz[f][c];
     }
 }
 
