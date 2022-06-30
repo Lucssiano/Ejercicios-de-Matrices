@@ -13,7 +13,6 @@ using namespace std;
 
 const int cantF = 25, cantC = 30;
 
-void inicializarMatriz(int matriz[][cantC], int m, int n);
 void cargarPorColumna(int matriz[][cantC], int m, int n);
 void mostrarPorColumna(int matriz[][cantC], int m, int n);
 float promComponentes(int matriz[][cantC], int m, int n);
@@ -34,21 +33,13 @@ int main()
 
   int matriz[cantF][cantC];
 
-  inicializarMatriz(matriz, cantF, cantC);
   cargarPorColumna(matriz, m, n);
-  mostrarPorColumna(matriz, cantF, cantC);
+  mostrarPorColumna(matriz, m, n);
   cout << "El valor promedio de los componentes de la matriz es: " << promComponentes(matriz, m, n) << endl;
   sumaColumHomologa(matriz, m, n);
   valorMaxFila(matriz, m, n);
 
   return 0;
-}
-
-void inicializarMatriz(int matriz[][cantC], int m, int n)
-{
-  for (int c = 0; c < n; c++)
-    for (int f = 0; f < m; f++)
-      matriz[f][c] = 0;
 }
 
 void cargarPorColumna(int matriz[][cantC], int m, int n)

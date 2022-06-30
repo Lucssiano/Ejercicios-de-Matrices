@@ -9,11 +9,10 @@ using namespace std;
 
 const int cantF = 25, cantC = 25;
 
-void inicializarMatriz(int matriz[][cantC], int m, int n);
 void cargarPorFila(int matriz[][cantC], int m, int n);
 void mostrarPorFila(int matriz[][cantC], int m, int n);
 void imprimirDiagonal(int matriz[][cantC], int n);
-void recorrerDiagonalPrincipal(int matriz[][cantC], int n, int filas, int columnas, int sumaDiagonal);
+void recorrerDiagonalPrincipal(int matriz[][cantC], int n, int columnas, int sumaDiagonal);
 void recorrerDiagonalSecundaria(int matriz[][cantC], int n, int filas, int columnas, int sumaDiagonal);
 
 int main()
@@ -29,19 +28,11 @@ int main()
 
   int matriz[cantF][cantC];
 
-  inicializarMatriz(matriz, cantF, cantC);
   cargarPorFila(matriz, n, n2);
-  mostrarPorFila(matriz, cantF, cantC);
+  mostrarPorFila(matriz, n, n2);
   imprimirDiagonal(matriz, n);
 
   return 0;
-}
-
-void inicializarMatriz(int matriz[][cantC], int m, int n)
-{
-  for (int c = 0; c < n; c++)
-    for (int f = 0; f < m; f++)
-      matriz[f][c] = 0;
 }
 
 void cargarPorFila(int matriz[][cantC], int m, int n)
@@ -86,12 +77,12 @@ void imprimirDiagonal(int matriz[][cantC], int n)
   }
 
   if (sumaDiagP > sumaDiagS)
-    recorrerDiagonalPrincipal(matriz, n, contFilas, contColumnas, sumaDiagP);
+    recorrerDiagonalPrincipal(matriz, n, contColumnas, sumaDiagP);
   else
   {
     if (sumaDiagP == sumaDiagS)
     {
-      recorrerDiagonalPrincipal(matriz, n, contFilas, contColumnas, sumaDiagP);
+      recorrerDiagonalPrincipal(matriz, n, contColumnas, sumaDiagP);
       recorrerDiagonalSecundaria(matriz, n, contFilas, contColumnas, sumaDiagS);
     }
     else
@@ -99,14 +90,10 @@ void imprimirDiagonal(int matriz[][cantC], int n)
   }
 }
 
-void recorrerDiagonalPrincipal(int matriz[][cantC], int n, int filas, int columnas, int sumaDiagonal)
+void recorrerDiagonalPrincipal(int matriz[][cantC], int n, int columnas, int sumaDiagonal)
 {
-  filas = 0;
   for (columnas = 0; columnas < n; columnas++)
-  {
-    cout << "Elementos de la diagonal principal: " << matriz[filas][columnas] << "  " << endl;
-    filas++;
-  }
+    cout << "Elementos de la diagonal principal: " << matriz[columnas][columnas] << "  " << endl;
   cout << "Los elementos de la diagonal principal suman: " << sumaDiagonal << endl;
 }
 
